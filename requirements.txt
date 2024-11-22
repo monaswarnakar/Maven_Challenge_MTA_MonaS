@@ -1,0 +1,4 @@
+dash==2.6.0
+pandas
+gunicorn
+Flask>=2.0,<3.0
