@@ -125,8 +125,9 @@ fig.update_layout(
     height=500  # Increase the height of the chart
 )
 # Initialize Dash app with suppress_callback_exceptions=True
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, suppress_callback_exceptions=True)
 server = app.server
+
 # Define transportation modes and years for the dropdown
 transport_modes = ['Subways', 'Buses', 'LIRR', 'Metro-North', 'Access-A-Ride', 'Bridges and Tunnels', 'Staten Island Railway']
 years = sorted(data['Year'].unique())
@@ -146,17 +147,9 @@ sidebar = html.Div(
     }
 )
 # Define the layout for the About, Overview, and Segment pages
-about_page = html.Div([
-    html.H1("About Page")
-])
-
-overview_page = html.Div([
-    html.H1("Overview Page")
-])
-
-segment_page = html.Div([
-    html.H1("Segment Page")
-])
+about_page = html.Div([ html.H1("About Page")])
+overview_page = html.Div([  html.H1("Overview Page")])
+segment_page = html.Div([ html.H1("Segment Page")])
 
 # Define the layout for the app
 app.layout = html.Div(
